@@ -1,0 +1,39 @@
+# 我们这边使用的是SpringBoot,基本上都封装好了,只需要配置就可以了;
+# 将MyBatis的配置也写在配置文件里,不需要像SSM一样需要xml配置了!;
+
+# 设置端口号
+server:
+  port: 8082
+  servlet:
+    context-path: /provider   # 配置访问URL路径地址, / : localhost:8082/xxxxx
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/yqx?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    # driver-class-name: com.mysql.jdbc.Driver
+
+    # 使用 Druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource  # 自定义数据源
+    driver-class-name: com.mysql.jdbc.Driver      # 设置名称
+
+
+    # 这里开始属于自定义属性
+    filters: stat  # filters过滤器,暂时不知道怎么用
+    maxActive: 20  # 数据库连接池支持最大连接数为20
+    initialSize: 1  # 连接处舒适化的数据库连接数   值越大,第一次调用数据库就越慢
+    maxWait: 60000  # 最大超时等待时间
+    timeBetweenEvictionRunsMillis: 60000  # 每毫秒检查一次数据池中空闲连接
+    minEvictableIdleTimeMillis: 30000     # 连接池中可空闲的时间(毫秒数)
+    validationQuery: select 'x'   # Druid来成为是连接是否可用的SQL语句  MySql不会去验证
+
+    testWhileIdle: true   # 默认为true,当应用向连接池申请连接，并且testOnBorrow为false时，连接池将会判断连接是否处于空闲状态，如果是，则验证这条连接是否可用。
+    testOnBorrow: false   # 如果为true（默认false），当应用向连接池申请连接时，连接池会判断这条连接是否是可用的。
+    testOnReturn: false   # 如果为true（默认false），当应用使用完连接，连接池回收连接的时候会判断该连接是否还可用。
+
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    mybatis:
+      # type-aliases-package: domain
+      type-aliases-package: com.yqx.common.domain # 找到具体的实体类包

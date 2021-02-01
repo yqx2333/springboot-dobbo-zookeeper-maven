@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/common/common.iml" filepath="$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/customer/customer.iml" filepath="$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/customer/customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/provider/provider.iml" filepath="$PROJECT_DIR$/springboot-maven-dubbo-zookeeper/provider/provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-common/springboot-common.iml" filepath="$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-common/springboot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-customer/springboot-customer.iml" filepath="$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-customer/springboot-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-dubbo-zookeeper-maven.iml" filepath="$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-dubbo-zookeeper-maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-provider/springboot-provider.iml" filepath="$PROJECT_DIR$/springboot-dubbo-zookeeper-maven/springboot-provider/springboot-provider.iml" />
+    </modules>
+  </component>
+</project>

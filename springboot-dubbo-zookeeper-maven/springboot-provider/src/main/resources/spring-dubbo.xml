@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 设置name属性 -->
+    <dubbo:application name="provider"/>
+
+    <!-- 注册中心IP地址 -->
+    <dubbo:registry address="zookeeper://localhost:2181" />
+
+    <!-- 扫描注解包路径,多个包用 , 分割;
+            不填package表示扫描的当前ApplicationContext中所有的类 -->
+    <dubbo:annotation package="service.impl" />
+
+    <!-- 协议配置，用于配置提供服务的协议信息，
+            协议由提供方指定，消费方被动接受。 -->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <!-- 找到对应的实现类 -->
+    <bean id="userService" class="com.yqx.provider.service.impl.UserServiceImpl" />
+
+    <!-- 找到对应的Service -->
+    <dubbo:service interface="com.yqx.common.service.UserService" ref="userService" />
+
+</beans>
