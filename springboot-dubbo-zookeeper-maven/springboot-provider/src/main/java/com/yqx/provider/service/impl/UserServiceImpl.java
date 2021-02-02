@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User getOne(Long id) {
-        return userMapper.getOne(1L);
+        return userMapper.getOne( id );
     }
 
 

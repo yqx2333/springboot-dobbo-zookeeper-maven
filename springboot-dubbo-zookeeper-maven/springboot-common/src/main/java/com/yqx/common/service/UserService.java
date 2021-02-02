@@ -1,5 +1,6 @@
 package com.yqx.common.service;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.yqx.common.domain.User;
 
 import java.util.List;
